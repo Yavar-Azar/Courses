@@ -102,7 +102,7 @@ you can modify above input as you wish ...
     add espresso calculator to ase Atoms object as follows:
 
     ```python
-    myaseobj.calc=Espresso(pseudopotentials=pseudodict,input_data=inpdata, kpts=(2,2,2))
+    myaseobj.calc=Espresso(pseudopotentials=pseudodict,input_data=inp_data, kpts=(2,2,2))
     ```
 
     
@@ -139,7 +139,7 @@ Repeat step1 to step4 ...
   after defining  **aseobj**, **psedudict** and **inputdata** we make can build a quantum espresso input file using `write`function:
 
   ```python
-  write("new.pwi", myaseobj,pseudopotentials=pseudodict,input_data=inpdata, kpts=(2,2,2))
+  write("new.pwi", myaseobj,pseudopotentials=pseudodict,input_data=inp_data, kpts=(2,2,2))
   ```
 
   - step 6
