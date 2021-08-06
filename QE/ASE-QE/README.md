@@ -34,13 +34,7 @@ Step-0 : Download your **cif** file and required **pseudo-potentials** and copy 
 
 
 
-------------
 
-**Note**
-
-you can modify above input as you wish ...
-
----------------------------------------------------
 
 
 
@@ -84,6 +78,13 @@ There are two different way to submit your job
      'ecutrho':240,'verbosity':'high','ecutwfc':30, 'diagonalization': 'david', 'occupations':'smearing','smearing':'mp', 'mixing_mode':'plain', 'mixing_beta':0.7,'degauss':0.001, 'nspin':1}
     ```
 
+------------
+
+**Note**
+
+you can modify above input as you wish ...
+
+---------------------------------------------------
     
 
   - step 4
@@ -131,11 +132,9 @@ There are two different way to submit your job
 
 - **Alternative method**
 
-  build your input using ase and then then modify and submit it in your terminal
+Repeat step1 to step4 ...
 
-  To do that we go through step1-step4
-
-  - step 5.
+  - step 5
 
   after defining  **aseobj**, **psedudict** and **inputdata** we make can build a quantum espresso input file using `write`function:
 
@@ -148,7 +147,7 @@ There are two different way to submit your job
     and execute pw command in the linux terminal
 
     ```bash
-    pw.x < new.pwi > new.pwo
+    ~ $    pw.x < new.pwi > new.pwo
     ```
 
     
