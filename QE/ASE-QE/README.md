@@ -1,6 +1,6 @@
 
 
-# QE+ASE 	(5 min)
+# QE+ASE 	(6 min)
 
 
 
