@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<table class="table table-striped"> <thead> <tr>
+	 <th>Command</th> <th>Description</th> <th></th>
+	  </tr> </thead> <tbody> <tr>
+	   <td>
+	   	<code>ls</code>
+	   </td>
+	   <td>Lists all files and directories in the present working directory </td>
+	    </tr> <tr> <td><code>ls-R</code></td> <td>Lists files in sub-directories as well</td> </tr>
+	     <tr> <td><code>ls-a</code></td> <td>Lists hidden files as well</td> </tr> 
+	     <tr> <td><code>ls-al</code></td> <td>Lists files and directories with detailed information like permissions,size, owner, etc.</td> </tr> 
+	     <tr> <td><code>cd or cd ~</code></td> <td>Navigate to HOME directory</td> </tr> 
+	     <tr> <td><code>cd ..</code></td> <td>Move one level up</td> </tr> 
+	     <tr> <td><code>cd</code></td> <td>To change to a particular directory</td> </tr>
+	      <tr> <td><code>cd /</code></td> <td>Move to the root directory</td> </tr> 
+	      <tr> <td><code>cat &gt; filename</code></td> <td>Creates a new file</td> </tr> 
+	      <tr> <td><code>cat filename</code></td> <td>Displays the file content</td> </tr> 
+	      <tr> <td><code>cat file1 file2 &gt; file3</code></td> <td>Joins two files (file1, file2) and stores the output in a new file (file3)</td> </tr>
+	      <tr> <td><code>mv file "new file path"</code></td> <td>Moves the files to the new location</td> </tr> 
+	      <tr> <td><code>mv filename new_file_name</code></td> <td>Renames the file to a new filename</td> </tr> <tr> <td><code>sudo</code></td> <td>Allows regular users to run programs with the security privileges of the superuser or root</td> </tr>
+	      <tr> <td><code>rm filename</code></td> <td>Deletes a file</td> </tr>
+	      <tr> <td><code>man</code></td> <td>Gives help information on a command</td> </tr>
+	      <tr> <td><code>history</code></td> <td>Gives a list of all past commands typed in the current terminal session</td> </tr> 
+	      <tr> <td><code>clear</code></td> <td>Clears the terminal</td> </tr> <tr> <td><code>mkdir directoryname</code></td> <td>Creates a new directory in the present working directory or a at the specified path</td> </tr> <tr> <td><code>rmdir</code></td> <td>Deletes a directory</td> </tr> <tr> <td><code>mv</code></td> <td>Renames a directory</td> </tr> <tr> <td><code>pr -x</code></td> <td>Divides the file into x columns</td> </tr> <tr> <td><code>pr -h</code></td> <td>Assigns a header to the file</td> </tr> <tr> <td><code>pr -n</code></td> <td>Denotes the file with Line Numbers</td> </tr> <tr> <td><code>lp -nc , lpr c</code></td> <td>Prints "c" copies of the File</td> </tr> <tr> <td><code> lp-d lp-P </code></td> <td>Specifies name of the printer </td></tr> <tr> <td><code>apt-get </code></td> <td>Command used to install and update packages </td></tr> <tr> <td><code>mail -s 'subject' -c 'cc-address' </code> <code> -b 'bcc-address' 'to-address' </code></td> <td>Command to send email </td></tr> <tr> <td><code>mail -s "Subject" to-address &lt; Filename </code></td> <td>Command to send email with attachment </td></tr> </tbody> </table><h2><a id=2></a>File Permission commands</h2><table class="table table-striped"> <thead> <tr> <th>Command</th> <th>Description</th> <th></th> </tr> </thead> <tbody> <tr> <td><code>ls-l</code></td> <td>to show file type and access permission</td> </tr> <tr> <td><code>r</code></td> <td>read permission</td> </tr> <tr> <td><code>w</code></td> <td>write permission</td> </tr> <tr> <td><code>x</code></td> <td>execute permission</td> </tr> <tr> <td><code>-=</code></td> <td>no permission</td> </tr> <tr> <td><code>Chown user</code></td> <td>For changing the ownership of a file/directory</td> </tr> <tr> <td><code>Chown user:group filename</code></td> <td>change the user as well as group for a file or directory</td> </tr> </tbody> </table><h2><a id=3></a>Environment Variables command</h2><table class="table table-striped"> <thead> <tr> <th>Command</th> <th>Description</th> <th></th> </tr> </thead> <tbody> <tr> <td><code>echo $VARIABLE</code></td> <td>To display value of a variable</td> </tr> <tr> <td><code>env</code></td> <td>Displays all environment variables</td> </tr> <tr> <td><code>VARIABLE_NAME= variable_value</code></td> <td>Create a new variable</td> </tr> <tr> <td><code>Unset</code></td> <td>Remove a variable</td> </tr> <tr> <td><code>export Variable=value</code></td> <td>To set value of an environment variable</td> </tr> </tbody> </table><h2><a id=4></a>User management commands of linux</h2><table class="table table-striped"> <thead> <tr> <th>Command</th> <th>Description</th> <th></th> </tr> </thead> <tbody> <tr> <td><code>sudo adduser username</code></td> <td>To add a new user</td> </tr> <tr> <td><code>sudo passwd -l 'username'</code></td> <td>To change the password of a user</td> </tr> <tr> <td><code>sudo userdel -r 'username'</code></td> <td>To remove a newly created user</td> </tr> <tr> <td><code>sudo usermod -a -G GROUPNAME USERNAME</code></td> <td>To add a user to a group</td> </tr> <tr> <td><code>sudo deluser USER GROUPNAME</code></td> <td>To remove a user from a group</td> </tr> <tr> <td><code>finger</code></td> <td>Shows information of all the users logged in</td> </tr> <tr> <td><code>finger username</code></td> <td>Gives information of a particular user</td> </tr> </tbody> </table>
+</body>
+</html>

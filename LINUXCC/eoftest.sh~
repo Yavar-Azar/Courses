@@ -1,0 +1,11 @@
+command <<EOF > my_output_file.txt
+ mesg1
+ msg2
+ msg3
+ $var on $foo
+EOFut_file.txt
+ mesg1
+ msg2
+ msg3
+ $var on $foo
+EOF
