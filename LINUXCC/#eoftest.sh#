@@ -1,0 +1,8 @@
+cat <<EOF EOF > my_output_file.txt
+
+EOF
+ mesg1
+ msg2
+ msg3
+ $var on $foo
+EOF
