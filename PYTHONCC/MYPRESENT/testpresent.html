@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>mysiesta</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/yavi.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/night.css" id="theme">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+
+
+<!--    First  -->
+
+				<section>
+					<font color="#D5F02C">
+					<p style="text-align:left">Introduction to</p>
+				</font>
+				<h2>Siesta</h2>
+				<p>Basics of crystallography</p>
+				<p> & Visualizers</p>
+				<p style="margin-top:3cm;">
+						presented by
+				</p>
+					<h3>Yavar T. Azar</h3>
+				</section>
+
+
+<!--    Second   outline  -->
+
+
+				<section >
+					<embed src="_statics/rotatecube2.html" class="inside1" >
+					<h3 class="yhead" style="text-align: left"> Outlines </h3>
+					<ul style="text-align: left">
+						<li style="margin-bottom: 15px; text-align: left">Bsics of crystallography</li>
+						<ul style="text-align: left">
+							<li>Crystal, lattice, Basis</li>
+							<li>Bravis Lattice</li>
+							<li>Symmetry: Point and Space group</li>
+							<li style="margin-bottom: 25px">Reciprocal Lattice</li>
+						</ul>
+						<li style="margin-bottom: 15px">Visualizers </li>
+						<ul style="text-align: left">
+							<li>VESTA</li>
+							<li>Xcrysden</li>
+							<li>gdis </li>
+							<li>cif2cell</li>
+						</ul>
+					</ul>
+      	</section>
+
+
+       <section  data-background="back.svg">
+         <h3>new colors</h3>
+				 <style>
+			 	 body {
+					 background-image: url('back.svg');
+					 }
+				</style>
+
+       </section>
+
+
+
+				<section>
+					<h3 style="text-align: left; color:yellow"> References </h3>
+   				<embed src="FIGS/kittel.jpg" class="inside2" >
+						<p style="text-align: left">Introduction to solid state physics, C. Kittel</p>
+						<p style="text-align: left">Solid state physics, Giuseppe Grosso</p>
+      	</section>
+
+
+
+<!--    3rd  crystal-->
+
+
+				<section>
+					<h3 style="text-align: left; color:yellow">Basics of crystallography </h3>
+						<h4 style="text-align: left; color:yellow">Crystal = lattice + Basis</h4>
+					<img src="FIGS/Basis.jpg" width="500">
+      	</section>
+
+
+<!--    4th  crystal-->
+
+				<section data-transition="zoom" data-background>
+					<h3 style="text-align: left">Basics of crystallography </h3>
+						<h4 style="text-align: left">Primitive and Convetional cell</h4>
+					<img src="FIGS/WScell.jpeg" width="600">
+      	</section>
+
+				<!--    6th  crystal-->
+
+				<section data-transition="zoom-in fade-out" data-background="white">
+					<h3 style="text-align: left; color:blue">Bravis Lattice and Symmetry</h3>
+					<img src="FIGS/bravis.jpg" width="100%">
+				</section>
+
+				<!--    7th  crystal-->
+
+
+<section data-transition="convex-in" data-background="white">
+	<img src="FIGS/latticeplane.jpeg" width="100%">
+</section>
+
+<!--   8th-->
+
+<section data-transition="convex-in fade-out" data-background="white">
+	<h3 style="text-align: left; color:blue">Direct and reciprocal lattice</h3>
+	<img src="FIGS/recip9.jpg" width="75%">
+</section>
+
+
+<!--   9th-->
+
+
+<section data-background="white">
+	<h3 style="text-align: left; color:blue">Brillouin zone</h3>
+	<p style="text-align: left; color:blue">In solid state physics, the first Brillouin zone
+		 is a uniquely defined primitive cell in reciprocal space</p>
+	<img src="FIGS/BZ.png" width="50%">
+</section>
+
+
+
+				<section data-transition="convex-in">
+					<h3>Examples of cif files</h3>
+					<html>
+					<head>
+						<title>Main Page</title>
+						 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+						 <meta name="viewport" content="initial-scale=1.0">
+						</head>
+						<body>
+							<p>Unit cell and basis</p>
+							<embed src="_statics/anatase.html" height="500px">
+							<p></p>
+							</body>
+							</html>
+					</section>
+
+<!-- 7th-->
+				<section data-transition="zoom-in fade-out">
+					<h3 style="text-align: left"> Visulization Tools </h3>
+          <br>
+					<h4 style="text-align:left"> VESTA</h4>
+					 <p style="text-align: left">
+							<font color="#F05E2C">
+							 cif, xsf, poscar, cube files, export png
+						 </font>
+						</p>
+						<h4 style="text-align:left"> xcrysden </h4>
+							<p style="text-align: left">
+								<font color="#F05E2C">
+									pwi, wien2k, xsf, and data (charge, potential, ...)
+							 </font>
+							</p>
+							<h4 style="text-align:left"> gdis </h4>
+								<p style="text-align: left">
+									<font color="#F05E2C">
+										read and write siesta fdf format and ....
+								 </font>
+								</p>
+								<h4 style="text-align:left"> ase-gui </h4>
+									<p style="text-align: left">
+										<font color="#F05E2C">
+											edit, make and convert between common formats
+									 </font>
+									</p>
+				</section>
+
+
+<!--  6th CIF@CELL  -->
+				<section data-background="#17202A">
+					<h3 class="fixheader">CIF2CELL</h3>
+					<p>
+					<li style="text-align:left"> Download &  installation</li>
+					<li style="text-align:left">Make pw, siesta, vasp ,... inputs</li>
+					<li style="text-align:left">analyse space group</li>
+				</p>
+				</section>
+
+
+
+				<section >
+					<h3></h3>
+					<a href="https://yavar-azar.github.io/SIESTA-Tutorial/crystal/crystal.html">Find tutorial files and lessons HERE</a>
+					<p>https://yavar-azar.github.io/SIESTA-Tutorial/crystal/crystal.html</p>
+				</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+		<script src="js/reveal.js"></script>
+		<script>
+
+			Reveal.initialize({
+				history: true,
+				transition: 'linear',
+
+				math: {
+					// mathjax: 'js/MathJax.js',
+					config: 'TeX-AMS_HTML-full',
+					TeX: {
+						Macros: {
+							R: '\\mathbb{R}',
+							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+						}
+					}
+				},
+
+				dependencies: [
+					{ src: 'js/math.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

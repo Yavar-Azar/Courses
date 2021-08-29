@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nglview-demo</title>
+</head>
+<body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.css">
+
+
+<!-- Load require.js. Delete this if your page already loads require.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js" crossorigin="anonymous"></script>
+
+<script type="application/vnd.jupyter.widget-state+json">
+{
+  "version_major": 2,
+  "version_minor": 0,
+  "state": {
+    "0690c3e1d92e42fb84b99dc3f9d126ee": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "d3f0725f7606415abad9dbda6fdfbd70": {
+      "model_name": "ColormakerRegistryModel",
+      "model_module": "nglview-js-widgets",
+      "model_module_version": "2.7.1",
+      "state": {
+        "_dom_classes": [],
+        "_msg_ar": [],
+        "_msg_q": [],
+        "_ready": true,
+        "layout": "IPY_MODEL_0690c3e1d92e42fb84b99dc3f9d126ee"
+      }
+    },
+    "4967459c8e92420084b437a80e242a65": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "8f7cef5bcea04b86b2104f055b535f93": {
+      "model_name": "NGLModel",
+      "model_module": "nglview-js-widgets",
+      "model_module_version": "2.7.1",
+      "state": {
+        "_camera_orientation": [
+          30.813880432816422,
+          1.2097881822238663,
+          -1.4926863419006378,
+          0,
+          1.2652233322647561,
+          5.274852171139559,
+          30.39345442329925,
+          0,
+          1.445997884036522,
+          -30.395711447765585,
+          5.215049663482231,
+          0,
+          -0.947182297706604,
+          -0.947240948677063,
+          -3.567862391471863,
+          1
+        ],
+        "_dom_classes": [],
+        "_ibtn_fullscreen": "IPY_MODEL_0922aeaea8674a79a37cc1e7877ebbd6",
+        "_igui": null,
+        "_iplayer": "IPY_MODEL_bd052d6575e34a8f9301c613497e66c6",
+        "_ngl_color_dict": {},
+        "_ngl_coordinate_resource": {},
+        "_ngl_full_stage_parameters": {
+          "impostor": true,
+          "quality": "medium",
+          "workerDefault": true,
+          "sampleLevel": 0,
+          "backgroundColor": "white",
+          "rotateSpeed": 2,
+          "zoomSpeed": 1.2,
+          "panSpeed": 1,
+          "clipNear": 0,
+          "clipFar": 100,
+          "clipDist": 10,
+          "fogNear": 50,
+          "fogFar": 100,
+          "cameraFov": 40,
+          "cameraEyeSep": 0.3,
+          "cameraType": "perspective",
+          "lightColor": 14540253,
+          "lightIntensity": 1,
+          "ambientColor": 14540253,
+          "ambientIntensity": 0.2,
+          "hoverTimeout": 0,
+          "tooltip": true,
+          "mousePreset": "default"
+        },
+        "_ngl_msg_archive": [
+          {
+            "target": "Stage",
+            "type": "call_method",
+            "methodName": "loadFile",
+            "reconstruc_color_scheme": false,
+            "args": [
+              {
+                "type": "blob",
+                "data": "data_image0\n_cell_length_a       3.7845\n_cell_length_b       3.7845\n_cell_length_c       9.5143\n_cell_angle_alpha    90\n_cell_angle_beta     90\n_cell_angle_gamma    90\n\n_symmetry_space_group_name_H-M    \"P 1\"\n_symmetry_int_tables_number       1\n\nloop_\n  _symmetry_equiv_pos_as_xyz\n  'x, y, z'\n\nloop_\n  _atom_site_label\n  _atom_site_occupancy\n  _atom_site_fract_x\n  _atom_site_fract_y\n  _atom_site_fract_z\n  _atom_site_thermal_displace_type\n  _atom_site_B_iso_or_equiv\n  _atom_site_type_symbol\n  Ti1      1.0000 0.00000  0.00000  0.00000  Biso   1.000  Ti\n  Ti2      1.0000 0.50000  0.50000  0.50000  Biso   1.000  Ti\n  Ti3      1.0000 0.00000  0.50000  0.25000  Biso   1.000  Ti\n  Ti4      1.0000 0.50000  0.00000  0.75000  Biso   1.000  Ti\n  O1       1.0000 0.00000  0.00000  0.20806  Biso   1.000  O\n  O2       1.0000 0.50000  0.50000  0.70806  Biso   1.000  O\n  O3       1.0000 0.00000  0.50000  0.45806  Biso   1.000  O\n  O4       1.0000 0.50000  0.00000  0.95806  Biso   1.000  O\n  O5       1.0000 0.50000  0.00000  0.54194  Biso   1.000  O\n  O6       1.0000 0.00000  0.50000  0.04194  Biso   1.000  O\n  O7       1.0000 0.50000  0.50000  0.29194  Biso   1.000  O\n  O8       1.0000 0.00000  0.00000  0.79194  Biso   1.000  O\n",
+                "binary": false
+              }
+            ],
+            "kwargs": {
+              "defaultRepresentation": true,
+              "ext": "cif"
+            }
+          },
+          {
+            "component_index": 0,
+            "target": "compList",
+            "type": "call_method",
+            "methodName": "addRepresentation",
+            "reconstruc_color_scheme": false,
+            "args": [
+              "licorice"
+            ],
+            "kwargs": {
+              "sele": "all"
+            }
+          },
+          {
+            "component_index": 0,
+            "target": "compList",
+            "type": "call_method",
+            "methodName": "addRepresentation",
+            "reconstruc_color_scheme": false,
+            "args": [
+              "unitcell"
+            ],
+            "kwargs": {
+              "sele": "all"
+            }
+          }
+        ],
+        "_ngl_original_stage_parameters": {
+          "impostor": true,
+          "quality": "medium",
+          "workerDefault": true,
+          "sampleLevel": 0,
+          "backgroundColor": "white",
+          "rotateSpeed": 2,
+          "zoomSpeed": 1.2,
+          "panSpeed": 1,
+          "clipNear": 0,
+          "clipFar": 100,
+          "clipDist": 10,
+          "fogNear": 50,
+          "fogFar": 100,
+          "cameraFov": 40,
+          "cameraEyeSep": 0.3,
+          "cameraType": "perspective",
+          "lightColor": 14540253,
+          "lightIntensity": 1,
+          "ambientColor": 14540253,
+          "ambientIntensity": 0.2,
+          "hoverTimeout": 0,
+          "tooltip": true,
+          "mousePreset": "default"
+        },
+        "_ngl_repr_dict": {
+          "0": {
+            "0": {
+              "type": "ball+stick",
+              "params": {
+                "lazy": false,
+                "visible": true,
+                "quality": "high",
+                "sphereDetail": 2,
+                "radialSegments": 20,
+                "openEnded": true,
+                "disableImpostor": false,
+                "aspectRatio": 1.5,
+                "lineOnly": false,
+                "cylinderOnly": false,
+                "multipleBond": "off",
+                "bondScale": 0.3,
+                "bondSpacing": 0.75,
+                "linewidth": 2,
+                "radiusType": "size",
+                "radiusData": {},
+                "radiusSize": 0.15,
+                "radiusScale": 2,
+                "assembly": "default",
+                "defaultAssembly": "",
+                "clipNear": 0,
+                "clipRadius": 0,
+                "clipCenter": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "flatShaded": false,
+                "opacity": 1,
+                "depthWrite": true,
+                "side": "double",
+                "wireframe": false,
+                "colorScheme": "element",
+                "colorScale": "",
+                "colorReverse": false,
+                "colorValue": 9474192,
+                "colorMode": "hcl",
+                "roughness": 0.4,
+                "metalness": 0,
+                "diffuse": 16777215,
+                "diffuseInterior": false,
+                "useInteriorColor": true,
+                "interiorColor": 2236962,
+                "interiorDarkening": 0,
+                "matrix": {
+                  "elements": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                },
+                "disablePicking": false,
+                "sele": ""
+              }
+            },
+            "1": {
+              "type": "licorice",
+              "params": {
+                "lazy": false,
+                "visible": true,
+                "quality": "medium",
+                "sphereDetail": 1,
+                "radialSegments": 10,
+                "openEnded": true,
+                "disableImpostor": false,
+                "lineOnly": false,
+                "cylinderOnly": false,
+                "multipleBond": "off",
+                "bondScale": 0.4,
+                "bondSpacing": 1,
+                "linewidth": 2,
+                "radiusType": "size",
+                "radiusData": {},
+                "radiusSize": 0.15,
+                "radiusScale": 1,
+                "assembly": "default",
+                "defaultAssembly": "",
+                "clipNear": 0,
+                "clipRadius": 0,
+                "clipCenter": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "flatShaded": false,
+                "opacity": 1,
+                "depthWrite": true,
+                "side": "double",
+                "wireframe": false,
+                "colorScheme": "element",
+                "colorScale": "",
+                "colorReverse": false,
+                "colorValue": 9474192,
+                "colorMode": "hcl",
+                "roughness": 0.4,
+                "metalness": 0,
+                "diffuse": 16777215,
+                "diffuseInterior": false,
+                "useInteriorColor": true,
+                "interiorColor": 2236962,
+                "interiorDarkening": 0,
+                "matrix": {
+                  "elements": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                },
+                "disablePicking": false,
+                "sele": "all"
+              }
+            },
+            "2": {
+              "type": "unitcell",
+              "params": {
+                "lazy": false,
+                "visible": true,
+                "quality": "medium",
+                "radiusSize": 0.025729693062301773,
+                "sphereDetail": 1,
+                "radialSegments": 10,
+                "disableImpostor": false,
+                "radiusType": "vdw",
+                "radiusData": {},
+                "radiusScale": 1,
+                "defaultAssembly": "",
+                "clipNear": 0,
+                "clipRadius": 0,
+                "clipCenter": {
+                  "x": 0,
+                  "y": 0,
+                  "z": 0
+                },
+                "flatShaded": false,
+                "opacity": 1,
+                "depthWrite": true,
+                "side": "double",
+                "wireframe": false,
+                "colorScheme": "element",
+                "colorScale": "",
+                "colorReverse": false,
+                "colorValue": "orange",
+                "colorMode": "hcl",
+                "roughness": 0.4,
+                "metalness": 0,
+                "diffuse": 16777215,
+                "diffuseInterior": false,
+                "useInteriorColor": true,
+                "interiorColor": 2236962,
+                "interiorDarkening": 0,
+                "matrix": {
+                  "elements": [
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1
+                  ]
+                },
+                "disablePicking": false,
+                "sele": "all"
+              }
+            }
+          }
+        },
+        "_ngl_serialize": true,
+        "_ngl_version": "2.0.0-dev.36",
+        "_ngl_view_id": [
+          "A5D315D4-572E-473C-8468-8B6EAA4D73E0"
+        ],
+        "_player_dict": {},
+        "_scene_position": {},
+        "_scene_rotation": {},
+        "_synced_model_ids": [],
+        "_synced_repr_model_ids": [],
+        "layout": "IPY_MODEL_4967459c8e92420084b437a80e242a65",
+        "n_components": 1,
+        "picked": {}
+      }
+    },
+    "bd747e40f3c24aaa94fcbea38a72f52d": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "968e8452ee8346e195bcba0315baaeeb": {
+      "model_name": "ImageModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_bd747e40f3c24aaa94fcbea38a72f52d",
+        "width": "900.0"
+      }
+    },
+    "04158f5a08ac4b968e97b93c654ed390": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "fe5e7a980a054985ba979428b92e573c": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {}
+    },
+    "fc07451586084aff9cc8fe268d469c14": {
+      "model_name": "PlayModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_04158f5a08ac4b968e97b93c654ed390",
+        "max": 0,
+        "style": "IPY_MODEL_fe5e7a980a054985ba979428b92e573c"
+      }
+    },
+    "f11154e94b664eb18eac61462ef73c0d": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "a67ae6b2551047b79325dfc187243882": {
+      "model_name": "SliderStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {}
+    },
+    "1f69e3332b13499fbd75160b2d71bc57": {
+      "model_name": "IntSliderModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_f11154e94b664eb18eac61462ef73c0d",
+        "max": 0,
+        "style": "IPY_MODEL_a67ae6b2551047b79325dfc187243882"
+      }
+    },
+    "81f2c93c1a254475be6c6bb131d1410e": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "bd052d6575e34a8f9301c613497e66c6": {
+      "model_name": "HBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "children": [
+          "IPY_MODEL_fc07451586084aff9cc8fe268d469c14",
+          "IPY_MODEL_1f69e3332b13499fbd75160b2d71bc57"
+        ],
+        "layout": "IPY_MODEL_81f2c93c1a254475be6c6bb131d1410e"
+      }
+    },
+    "8480e8b8f3f04c2d816c7d75522820d1": {
+      "model_name": "LinkModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "source": [
+          "IPY_MODEL_fc07451586084aff9cc8fe268d469c14",
+          "value"
+        ],
+        "target": [
+          "IPY_MODEL_1f69e3332b13499fbd75160b2d71bc57",
+          "value"
+        ]
+      }
+    },
+    "9807b7ed8b7d41da91315485194e2628": {
+      "model_name": "LinkModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "source": [
+          "IPY_MODEL_fc07451586084aff9cc8fe268d469c14",
+          "value"
+        ],
+        "target": [
+          "IPY_MODEL_8f7cef5bcea04b86b2104f055b535f93",
+          "frame"
+        ]
+      }
+    },
+    "bd5044ac29844db4af941c84390d0b15": {
+      "model_name": "LinkModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "source": [
+          "IPY_MODEL_fc07451586084aff9cc8fe268d469c14",
+          "max"
+        ],
+        "target": [
+          "IPY_MODEL_8f7cef5bcea04b86b2104f055b535f93",
+          "max_frame"
+        ]
+      }
+    },
+    "1fbbcd7bb3b845b0aff2602788209e2d": {
+      "model_name": "LinkModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "source": [
+          "IPY_MODEL_1f69e3332b13499fbd75160b2d71bc57",
+          "max"
+        ],
+        "target": [
+          "IPY_MODEL_8f7cef5bcea04b86b2104f055b535f93",
+          "max_frame"
+        ]
+      }
+    },
+    "b815caeb87324b908366394bffde295a": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {
+        "width": "34px"
+      }
+    },
+    "2ced69c248b2440faf91cf2293d77c19": {
+      "model_name": "ButtonStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {}
+    },
+    "0922aeaea8674a79a37cc1e7877ebbd6": {
+      "model_name": "ButtonModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "icon": "compress",
+        "layout": "IPY_MODEL_b815caeb87324b908366394bffde295a",
+        "style": "IPY_MODEL_2ced69c248b2440faf91cf2293d77c19"
+      }
+    }
+  }
+}
+</script>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "d3f0725f7606415abad9dbda6fdfbd70"}
+</script>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "8f7cef5bcea04b86b2104f055b535f93"}
+</script>
+
+</body>
+</html>

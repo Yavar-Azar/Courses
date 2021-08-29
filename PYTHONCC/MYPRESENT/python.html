@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>mysiesta</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/yavi.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/night.css" id="theme">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+
+
+<!--    First  -->
+
+				<section>
+					<font color="#D5F02C">
+					<p style="text-align:left"></p>
+				</font>
+				<h2>Basics of python</h2>
+				<p>for scientists and engineers</p>
+				<p> </p>
+				<p style="margin-top:3cm;">
+						presented by
+				</p>
+					<h3>Yavar T. Azar</h3>
+									<p> 29 AUG 2021 </p>
+
+				</section>
+
+
+<!--    Slide #2 Second   outline  -->
+
+
+				<section>
+					<embed src="_statics/rotatepython.html" class="inside1" >
+					<h3 class="yhead" style="text-align: left"> Outlines </h3>
+					<h3 class="yhead" style="text-align: left">  </h3>
+						<li style="margin-bottom: 15px; text-align: left">Installation and Setup </li>
+						<li style="margin-bottom: 15px; text-align: left">Data type </li>
+						<li style="margin-bottom: 15px; text-align: left">Loops </li>
+						<li style="margin-bottom: 15px; text-align: left">Conditionals </li>
+						<li style="margin-bottom: 15px; text-align: left">Functions </li>
+						<li style="margin-bottom: 15px; text-align: left"> Numpy Library</li>
+						<li style="margin-bottom: 15px; text-align: left"> matplotlib Library</li>
+      	</section>
+
+
+    <section  data-background-color="#082f42" >
+    	<h2> Installation and setup</h2>
+
+    	<ul>
+    		<li>
+    			linux & Windows Installation
+    		</li>
+    		<li>
+    			Anaconda
+    		</li>
+    		<li>
+    			pip install `package`
+    		</li>
+    	</ul>
+    </section>
+
+
+
+
+		<section data-background-color="#044039">
+			<h2>
+				Data Types;
+			</h2>
+			<ul>
+				<li>int, float, str</li>
+				<li>list</li>
+				<li>tuple</li>
+				<li>boolean</li>
+				<li>dictionary</li>
+				<li>array</li>
+				<li>...</li>
+			</ul>
+	
+		</section>
+
+
+
+		<section  data-background-color="#044039">
+			<h2>Conditionals</h2>
+
+			<pre>
+				<code class="hljs">					
+					if a < b:
+						print(str(a)+"is less than"+str(b))
+				</code>
+			</pre>
+		</section>
+
+		<section>
+			<h2>
+				loops
+			</h2>
+
+		<pre>
+				<code class="hljs">
+	a = 0
+	for i in range(1,10):
+		print(i)
+		a+=i
+	print(a)
+
+				</code>
+			</pre>
+		</section>
+
+
+
+		<section  data-background-color="#044039">
+			<h2>Functions</h2>
+			
+		</section>
+
+		<section  data-background-color="#044039">
+			
+		</section>
+
+
+
+		<section  data-background-color="#044039">
+			
+		</section>
+		<script src="js/reveal.js"></script>
+		<script>
+
+			Reveal.initialize({
+				history: true,
+				transition: 'linear',
+
+				math: {
+					// mathjax: 'js/MathJax.js',
+					config: 'TeX-AMS_HTML-full',
+					TeX: {
+						Macros: {
+							R: '\\mathbb{R}',
+							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+						}
+					}
+				},
+
+				dependencies: [
+					{ src: 'js/math.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

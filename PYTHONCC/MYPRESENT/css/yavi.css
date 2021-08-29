@@ -1,0 +1,73 @@
+/* The navigation bar */
+.yhead {
+  top: -410;
+  left: 10;/* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+
+.inside2 {
+    left: 300px;
+    top: 250px;
+    width:30%;
+    height:150%;
+    position:fixed;
+}
+
+
+.inside1 {
+    left: 300px;
+    top: 200px;
+    width:60%;
+    height:150%;
+    position:fixed;
+}
+
+
+
+
+
+5
+6
+7
+8
+9
+10
+11
+12
+13
+
+
+@font-face {
+  font-family: 'Yekan';
+  src: url('fonts/Yekan.eot?#') format('eot'),
+       url('fonts/Yekan.woff') format('woff'),
+       url('fonts/Yekan.ttf') format('truetype');
+  font-style:normal;
+  font-weight:normal;
+}
+
+
+
+ .pfa{
+   direction:rtl;
+   font-family:Nasim;
+}
+
+
+
+
+
+
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
