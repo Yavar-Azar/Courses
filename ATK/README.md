@@ -1,3 +1,7 @@
+
+
+
+
 # Quantum-ATK
 
 
@@ -6,11 +10,14 @@
 
 <div style="height:30px; background-color:gray;" ></div>
 
-- **CIF** is a standard format for crystal structure information containing cell parameters, atomic positions and type
+- **CIF** is a standard format for crystal structure information containing cell parameters, atomic positions and type   <img style="float: right; height:200px" src="./images/Animation.gif">
+- Basic concepts , Lattice, Basis 
 
-- Bravais lattice , Symmetry, Point group, Space group, Wyckoff positions
+- Bravais lattice 
+-  Point group, Space group
+-  Wyckoff positions
 
-  https://www.cryst.ehu.es/
+- https://www.cryst.ehu.es/
 
   
 
