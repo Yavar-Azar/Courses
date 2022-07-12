@@ -42,7 +42,7 @@ Linux file system is the collection of data and/or files stored in a computer’
 
 
 
-![](/home/yavar/MYGIT/Courses/LINUXCC/images/filesys.png)
+![](./images/filesys.png)
 
 
 
