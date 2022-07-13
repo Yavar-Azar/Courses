@@ -1,0 +1,6 @@
+file1.txt
+file1.txt~
+file2.txt
+list.txt
+new2
+newfile.txt
