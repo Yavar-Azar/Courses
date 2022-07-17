@@ -1,0 +1,73 @@
+#+SETUPFILE:/home/yavar01/org-html-themes-master/setup/theme-readtheorg.setup
+#+TITLE: Quantum-ESPRESSO workshop \\
+#+AUTHOR: Yavar T. Azar
+#+EMAIL: y.t.azar@gmail.com
+#+MACRO: color @@html:<font color="$1">$2</font>@@
+#+OPTIONS:   H:3
+#+OPTIONS:   num:nil
+
+# now prints out the previously disabled (toc:nil) table of contents.
+#+TOC: headlines 2
+
+* {{{color(gray,INTRODUCTION TO LINUX)}}}
+
+** Some basic commands
+| *ls*              | directory listing                                                  |
+| *ls -al*          | formatted listing with hidden files                                |
+| *cd dir*          |  change directory to dir                                                                   |
+| *cd*              | change to home                                                     |
+| *pwd*             | show current directory                                             |
+| *mkdir dir*       | create a directory dir                                             |
+| *rm file*         | delete file                                                        |
+| *rm -r dir*       | delete directory dir                                               |
+| *rm -f file*      | force remove file                                                  |
+| *rm -rf dir*      | force remove directory dir *                                       |
+| *cp file1 file2*  | copy file1 to file2                                                |
+| *cp -r dir1 dir2* | copy dir1 to dir2; create dir2 if it                               |
+|                   | doesn't exist                                                      |
+| *mv file1 file2*  | rename or move file1 to file2                                      |
+|                   | if file2 is an existing directory moves file1 into directory file2 |
+| *ln -s file link* | create symbolic link link to file                                  |
+| *touch file*      | create or update file                                              |
+| *cat > file*      | places standard input into file                                    |
+| *more file*       | output the contents of file                                        |
+| *head file*       | output the first 10 lines of file                                  |
+| *tail file*       | output the last 10 lines of file                                   |
+| *tail -f file*    | output the contents of file as it                                  |
+
+
+** Bash scripting (/for/ and /while/  loops) 
+
+* Fisrt steps to PW
+
+** Excercise 1. (INPUT file)
+
+- getting exp or computed structure from online databases
+- generating input files using easy tools
+- visulizing  them using _xcrysden_, _VESTA_, _gdis_, or _ase-gui_ ...
+
+** SCF and convergency test for GaAs
+{{{color(blue,In this exercise we will first perform simple scf (self-consistent field) calculations on GaAs structure)}}}
+
++ STEP 1. Use Xcrysden to view the structure of input file and explore different utilities
++ STEP 2. Open and read the input file
+Note that in the &control namelist, we have specified that we want to run an *scf* calculation.\\
+GaAs has the diamond structure. Note that we are using a (primitive) unit cell that corresponds to an fcc lattice, with 2 atoms in the atomic basis.\\
+Notice the values given for ibrav, nat, ntyp and ATOMIC-POSITIONS.\\
+In this file, the lattice constant {{{color(red,celldm(1))}}} has been set equal to 10.86626 bohr, which is the experimental value. \\
+A 2×2×2 Monkhorst-Pack {{{color(red,k-point mesh.)}}}  has been used. \\
+The plane-wave cut-off for wavefunctions, ecutwfc, has been set to 30 Ry. Since we are not using an ultrasoft pseudopotential. \\
+
++ STEP 3. Run your input using following command
+
+~cd ~/WORKSHOP_QE/BULK/SECTION-SCF~  \\
+~pw.x < GaAs.scf.in | tee GaAs.scf.out~
+
+* Cell and atomic position relaxation
+
+* Post-Processing (Charge, Electrostatic Potential)
+
+* Post-Processing ( Dos and Projected Dos)
+
+* 2D-Systems ( Making Slabs )
+

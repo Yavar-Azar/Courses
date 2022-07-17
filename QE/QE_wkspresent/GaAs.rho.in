@@ -1,0 +1,14 @@
+ &inputpp
+    prefix  = 'GaAs1'
+    outdir = './'
+    filplot = 'GaAscharge'
+    plot_num= 0
+ /
+ &plot
+    nfile = 1
+    filepp(1) = 'GaAscharge'
+    weight(1) = 1.0
+    iflag = 3
+    output_format = 5
+    fileout = 'GaAs.rho.xsf'
+/

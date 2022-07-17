@@ -1,0 +1,21 @@
+\frametitle{Post-processing}
+\begin{itemize}
+\item Suite of codes that take in the output $\psi_i(\vr)$, $V_{eff}(\vr)$ and
+  $\epsilon_i$'s and produces various kinds of post-processed data
+\item Each post-processing routine has its own input.
+\begin{verbatim}
+ &inputpp
+  /
+  &plot
+     nfile = 3
+     filepp(1) =  "Rh100+C60.charge"
+     filepp(2) =  "C60.charge"
+     filepp(3) =  "Rh100.charge"
+     weight(1) =   1.0
+     weight(2) =  -1.0
+     weight(3) =  -1.0
+     iflag = 3
+     output_format = 5
+  /
+\end{verbatim}
+\end{itemize}

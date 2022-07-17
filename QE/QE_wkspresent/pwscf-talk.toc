@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {2}{The input}{10}{0}{2}
+\beamer@subsectionintoc {2}{1}{Namelists}{10}{0}{2}
+\beamer@subsectionintoc {2}{2}{Cards}{32}{0}{2}
+\beamer@sectionintoc {3}{Data analysis}{35}{0}{3}

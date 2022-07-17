@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-05-03 Fri 23:05 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Quantum-ESPRESSO workshop <br />
+</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Yavar T. Azar" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Quantum-ESPRESSO workshop <br />
+</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orge7cb631"><font color="gray">INTRODUCTION TO LINUX</font>  </a>
+<ul>
+<li><a href="#org09c4f8c">Some basic commands</a></li>
+<li><a href="#org4e530fa">Bash scripting (<code>for</code> and <code>while</code>  loops)</a></li>
+</ul>
+</li>
+<li><a href="#orge8d582e">Fisrt calculation</a>
+<ul>
+<li><a href="#org62d3ddf">Excercise 1. (INPUT file)</a></li>
+<li><a href="#orge9deb3f">SCF and convergency test for GaAs</a></li>
+</ul>
+</li>
+<li><a href="#org5fc0d14">Cell and atomic position relaxation</a></li>
+<li><a href="#org219c701">Post-Processing</a>
+<ul>
+<li><a href="#orgd356ac8">Post-Processing I (Charge, Electrostatic Potential)</a></li>
+<li><a href="#orgace80fe">Post-Processing II ( Dos and Projected Dos)</a>
+<ul>
+<li><a href="#org89c5490">Projected Density of states</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgb230757">2D-Systems ( Making Slabs )</a>
+<ul>
+<li><a href="#org216e69c">Slabs and surface energy</a></li>
+<li><a href="#orgc0580df">Electronic structure of slabs vs Bulk</a></li>
+<li><a href="#orge9d7a7e">Work<sub>function</sub> Calculations</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div class="figure">
+<p><img src="logo_header.jpg" alt="logo_header.jpg" /><br />
+</p>
+</div>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orge7cb631"><font color="gray">INTRODUCTION TO LINUX</font>  </a>
+<ul>
+<li><a href="#org09c4f8c">Some basic commands</a></li>
+<li><a href="#org4e530fa">Bash scripting (<code>for</code> and <code>while</code>  loops)</a></li>
+</ul>
+</li>
+<li><a href="#orge8d582e">Fisrt calculation</a>
+<ul>
+<li><a href="#org62d3ddf">Excercise 1. (INPUT file)</a></li>
+<li><a href="#orge9deb3f">SCF and convergency test for GaAs</a></li>
+</ul>
+</li>
+<li><a href="#org5fc0d14">Cell and atomic position relaxation</a></li>
+<li><a href="#org219c701">Post-Processing</a>
+<ul>
+<li><a href="#orgd356ac8">Post-Processing I (Charge, Electrostatic Potential)</a></li>
+<li><a href="#orgace80fe">Post-Processing II ( Dos and Projected Dos)</a></li>
+</ul>
+</li>
+<li><a href="#orgb230757">2D-Systems ( Making Slabs )</a>
+<ul>
+<li><a href="#org216e69c">Slabs and surface energy</a></li>
+<li><a href="#orgc0580df">Electronic structure of slabs vs Bulk</a></li>
+<li><a href="#orge9d7a7e">Work<sub>function</sub> Calculations</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge7cb631" class="outline-2">
+<h2 id="orge7cb631"><font color="gray">INTRODUCTION TO LINUX</font>  <img src="linuxlogo.png" alt="linuxlogo.png" /></h2>
+<div class="outline-text-2" id="text-orge7cb631">
+</div>
+<div id="outline-container-org09c4f8c" class="outline-3">
+<h3 id="org09c4f8c">Some basic commands</h3>
+<div class="outline-text-3" id="text-org09c4f8c">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><b>ls</b></td>
+<td class="org-left">directory listing</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>ls -al</b></td>
+<td class="org-left">formatted listing with hidden files</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>cd dir</b></td>
+<td class="org-left">change directory to dir</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>cd</b></td>
+<td class="org-left">change to home</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>pwd</b></td>
+<td class="org-left">show current directory</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>mkdir dir</b></td>
+<td class="org-left">create a directory dir</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>rm file</b></td>
+<td class="org-left">delete file</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>rm -r dir</b></td>
+<td class="org-left">delete directory dir</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>rm -f file</b></td>
+<td class="org-left">force remove file</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>rm -rf dir</b></td>
+<td class="org-left">force remove directory dir *</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>cp file1 file2</b></td>
+<td class="org-left">copy file1 to file2</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>cp -r dir1 dir2</b></td>
+<td class="org-left">copy dir1 to dir2; create dir2 if it  doesn't exist</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>mv file1 file2</b></td>
+<td class="org-left">rename or move file1 to file2 if file2 is an existing directory</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>ln -s file link</b></td>
+<td class="org-left">create symbolic link link to file</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>touch file</b></td>
+<td class="org-left">create or update file</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>cat &gt; file</b></td>
+<td class="org-left">places standard input into file</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>more file</b></td>
+<td class="org-left">output the contents of file</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>head file</b></td>
+<td class="org-left">output the first 10 lines of file</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>tail file</b></td>
+<td class="org-left">output the last 10 lines of file</td>
+</tr>
+
+<tr>
+<td class="org-left"><b>tail -f file</b></td>
+<td class="org-left">output the contents of file as it</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+<div id="outline-container-org4e530fa" class="outline-3">
+<h3 id="org4e530fa">Bash scripting (<code>for</code> and <code>while</code>  loops)</h3>
+<div class="outline-text-3" id="text-org4e530fa">
+<ul class="org-ul">
+<li>Example 1. For Loop<br /></li>
+</ul>
+<p>
+<code>for i in {1..10}; do echo $i ; done</code><br />
+</p>
+
+<ul class="org-ul">
+<li>Example 2. While loop<br /></li>
+</ul>
+<p>
+<code>ls &gt; list</code> <br />
+<code>while read -r  var ; do echo $var ; done &lt; list</code><br />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge8d582e" class="outline-2">
+<h2 id="orge8d582e">Fisrt calculation</h2>
+<div class="outline-text-2" id="text-orge8d582e">
+</div>
+<div id="outline-container-org62d3ddf" class="outline-3">
+<h3 id="org62d3ddf">Excercise 1. (INPUT file)</h3>
+<div class="outline-text-3" id="text-org62d3ddf">
+<ul class="org-ul">
+<li>getting exp or computed structure from online databases<br /></li>
+<li>generating input files using easy tools<br /></li>
+<li>visulizing  them using <span class="underline">xcrysden</span>, <span class="underline">VESTA</span>, <span class="underline">gdis</span>, or <span class="underline">ase-gui</span> &#x2026;<br /></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge9deb3f" class="outline-3">
+<h3 id="orge9deb3f">SCF and convergency test for GaAs</h3>
+<div class="outline-text-3" id="text-orge9deb3f">
+<p>
+<font color="blue">In this exercise we will first perform simple scf (self-consistent field) calculations on GaAs structure</font><br />
+</p>
+
+<ul class="org-ul">
+<li>STEP 1. Use Xcrysden to view the structure of input file and explore different utilities<br /></li>
+
+<li>STEP 2. Open and read the input file <a href="GaAs.scf.in">GaAs.scf.in</a><br /></li>
+</ul>
+<p>
+Note that in the &amp;control namelist, we have specified that we want to run an <b>scf</b> calculation.<br />
+GaAs has the diamond structure. Note that we are using a (primitive) unit cell that corresponds to an fcc lattice, with 2 atoms in the atomic basis.<br />
+Notice the values given for ibrav, nat, ntyp and ATOMIC-POSITIONS.<br />
+In this file, the lattice constant <b><font color="violet">celldm(1)</font></b> has been set equal to 10.86626 bohr, which is the experimental value. <br />
+A 2×2×2 Monkhorst-Pack <b><font color="violet">k-point mesh.</font></b>  has been used. <br />
+The plane-wave cut-off for wavefunctions, <b><font color="violet">ecutwfc</font></b>, has been set to 30 Ry. Since we are not using an ultrasoft pseudopotential. <br />
+</p>
+
+<ul class="org-ul">
+<li>STEP 3. Run your input using following command<br /></li>
+</ul>
+
+<hr />
+<p>
+<b>&spades; Hands on</b><br />
+</p>
+
+<p>
+<code>cd ~/WORKSHOP_QE/BULK/SECTION-SCF</code>  <br />
+<code>xcrysden --pwi GaAs.scf.in</code> <br />
+</p>
+
+<p>
+<code>pw.x &lt; GaAs.scf.in | tee GaAs.scf.out</code><br />
+</p>
+<hr />
+
+<ul class="org-ul">
+<li><p>
+STEP 4. How to extract data from output file? <br />
+For total energy:  <code>grep ! GaAs.scf.out</code> <br />
+For Total Force:  <code>grep Total force GaAs.scf.out</code> <br />
+For #electron : <code>grep "of electrons    " GaAs.scf.out</code><br />
+<font color="red"> Whts is the number of electrons? and Why?</font><br />
+</p>
+
+<p>
+<i>read first lines of your pseudo files !!!</i><br />
+</p></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>STEP 5. Covergency test for K-points and ecutwf<br /></li>
+</ul>
+<p>
+In this step write a simple script <a href="Kloop.sh">Kloop.sh</a> (k-mesh) and  <a href="ecutloop.sh">ecutloop.sh</a> (ecut) to run scf per different values of k-points and ecut <br />
+Plot a Physical quantity vs. variables and find converhency limit for your data<br />
+</p>
+
+<p>
+At the first step one can plot total energy vs. above variables:<br />
+</p>
+
+<p>
+<img src="kmesh.png" alt="kmesh.png" /> <img src="ecut.png" alt="ecut.png" /><br />
+</p>
+
+<p>
+<b><font color="red"> *Is there any better quantity for convergency test???</font></b><br />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5fc0d14" class="outline-2">
+<h2 id="org5fc0d14">Cell and atomic position relaxation</h2>
+<div class="outline-text-2" id="text-org5fc0d14">
+<p>
+The Murnaghan equation is derived, under certain assumptions, from the equations of continuum mechanics.<br />
+It involves two adjustable parameters: the modulus of incompressibility K0 and its first derivative with respect to the pressure, K'0,<br />
+both measured at ambient pressure.<br />
+</p>
+
+<p>
+In general, these coefficients are determined by a regression on experimentally obtained values of volume V as a function of the pressure P.<br />
+These experimental data can be obtained by X-ray diffraction or by shock tests. Regression can also be performed on the values of the energy as a<br />
+function of the volume obtained from ab-initio and molecular dynamics calculations<br />
+</p>
+
+
+<p>
+The Murnaghan equation of state is typically expressed as:<br />
+</p>
+
+
+ \begin{equation}                        % arbitrary environments,
+{\displaystyle E(V)=E_{0}+K_{0}\,V_{0}\left[{\frac {1}{K_{0}'(K_{0}'-1)}}\left({\frac {V}{V_{0}}}\right)^{1-K_{0}'}+{\frac {1}{K_{0}'}}{\frac {V}{V_{0}}}-{\frac {1}{K_{0}'-1}}\right].} \\
+{\displaystyle P(V)={\frac {K_{0}}{K_{0}'}}\left[\left({\frac {V}{V_{0}}}\right)^{-K_{0}'}-1\right]\,.} 
+\end{equation}
+
+<ul class="org-ul">
+<li><p>
+STEP 1. calculate Energy vs Volume<br />
+<code>cd ~/WORKSHOP_QE/BULK/OPTIMIZATION/E-V</code> <br />
+#open <code>ev.sh</code> and change it <br />
+#execute the shell <br />
+<code>sh ev.sh</code> <br />
+</p>
+
+<p>
+#open ev.data file <br />
+#plot Energy vs volume using gnuplot <br />
+</p>
+
+
+<div class="figure">
+<p><img src="EV.png" alt="EV.png" /><br />
+</p>
+</div></li>
+</ul>
+
+
+
+
+
+
+<hr />
+</div>
+</div>
+<div id="outline-container-org219c701" class="outline-2">
+<h2 id="org219c701">Post-Processing</h2>
+<div class="outline-text-2" id="text-org219c701">
+<p>
+<b>pp.x</b> code<br />
+</p>
+
+<p>
+The code performs two steps:<br />
+</p>
+
+<p>
+(1) reads the output produced by <b>pw.x</b>, extracts and calculates<br />
+    the desired quantity/quantities (\(\rho\), V, &#x2026;)<br />
+</p>
+
+<p>
+(2) writes the desired quantity to file in a suitable format for<br />
+    various types of plotting and various plotting programs<br />
+</p>
+
+
+<p>
+<i>generated data files can be visualized by xcrysden, VESTA, &#x2026;)</i><br />
+</p>
+</div>
+<div id="outline-container-orgd356ac8" class="outline-3">
+<h3 id="orgd356ac8">Post-Processing I (Charge, Electrostatic Potential)</h3>
+<div class="outline-text-3" id="text-orgd356ac8">
+<ul class="org-ul">
+<li>After a SCF calculation we can make an input for post processing, <br /></li>
+</ul>
+<p>
+for A 3D charge visualization take alook at <a href="GaAs.rho.in">GaAs.rho.in</a><br />
+</p>
+<ul class="org-ul">
+<li>there are two /namelist/s; <br />
+&amp;inputpp : calculate a quantity<br />
+&amp;Plot  ; prepare data for visualization<br /></li>
+</ul>
+<p>
+<img src="charge-density.png" alt="charge-density.png" />  <img src="charge-density2.png" alt="charge-density2.png" /><br />
+XCRYSDEN:various 2D (isolines/colorplanes) and 3D (isosurfaces) plots (charge density, charge density difference, electrostatic potential)<br />
+</p>
+
+<hr />
+<p>
+<b>&clubs; Hands on</b><br />
+</p>
+
+<p>
+<code>cd ~/WORKSHOP_QE/BULK/GAAS_PP/CHARGE</code> <br />
+<code>pw.x &lt; GaAs.scf.in | tee GaAs.scf.out</code> <br />
+<code>pp.x &lt; GaAs.rho.in  | tee GaAs.rho.out</code> <br />
+<code>xcrysden --xsf GaAs.rho.xsf</code> <br />
+<code>VESTA GaAs.rho.scf</code> <br />
+</p>
+<hr />
+</div>
+</div>
+<div id="outline-container-orgace80fe" class="outline-3">
+<h3 id="orgace80fe">Post-Processing II ( Dos and Projected Dos)</h3>
+<div class="outline-text-3" id="text-orgace80fe">
+<p>
+<font color="blue">In this session we will analyse density of state and its projection over atomic orbitals </font><br />
+</p>
+<ul class="org-ul">
+<li>set the energy range for dos calculation, <font color="red"> what is Emin  Emax</font><br /></li>
+<li>Calculate Dos with/without nscf <font color="red"> what is the difference?</font><br /></li>
+<li>Integrate Dos from -\infinity to Fermi energy (Is that electron numbers?)<br /></li>
+</ul>
+
+
+<hr />
+<p>
+<b>&diams; Hands on</b><br />
+</p>
+
+<p>
+<code>cd ~/WORKSHOP_QE/BULK/GAAS_PP/DOS</code><br />
+<code>pw.x &lt; GaAs.scf.in | tee GaAs.scf.out</code><br />
+<code>dos.x &lt; GaAs.dos.in | tee GaAs.dos.out</code> <br />
+</p>
+
+
+<p>
+<code>pw.x &lt; GaAs.nscf.in | tee GaAs.nscf.out</code><br />
+<code>dos.x &lt; GaAsnsf.dos.in | tee GaAsnsf.dos.out</code> <br />
+</p>
+<hr />
+</div>
+<div id="outline-container-org89c5490" class="outline-4">
+<h4 id="org89c5490">Projected Density of states</h4>
+<div class="outline-text-4" id="text-org89c5490">
+<p>
+Purpose of projwfc.x:<br />
+    projects wavefunctions onto orthogonalized atomic wavefunctions,<br />
+    calculates Lowdin charges, spilling parameter, projected DOS<br />
+    (separated into up and down components for lSDA)<br />
+    alternatively, computes the local DOS(E), integrated in volumes<br />
+    given in input<br />
+</p>
+
+<p>
+Structure of the input data:<br />
+<code>==========================</code><br />
+</p>
+
+<p>
+&amp;PROJWFC<br />
+  &#x2026;<br />
+/<br />
+</p>
+
+<hr />
+<p>
+<b>&clubs; Hands on</b><br />
+</p>
+
+<p>
+<code>cd ~/WORKSHOP_QE/BULK/GAAS_PP/PDOS</code><br />
+<code>pw.x &lt; GaAs.scf.in | tee GaAs.scf.out</code><br />
+<code>projwfc.x &lt; GaAs.pdos.in | tee GaAs.pdos.out</code><br />
+<code>sumpdos.x GAASpdos.pdos_atm#1* &gt; atoms1.pdos</code><br />
+<code>sumpdos.x GAASpdos.pdos_atm#2* &gt; atoms2.pdos</code><br />
+<code>sumpdos.x GAASpdos.pdos_atm#*wfc*s* &gt; sorbitals.pdos</code><br />
+</p>
+
+<p>
+<i>Edit your gnuplot script, for example plotpdos.dat</i><br />
+</p>
+
+<p>
+<code>gnuplot plotpdos.dat</code><br />
+</p>
+
+
+<div class="figure">
+<p><img src="PDOS1.png" alt="PDOS1.png" /><br />
+</p>
+</div>
+
+<hr />
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div id="outline-container-orgb230757" class="outline-2">
+<h2 id="orgb230757">2D-Systems ( Making Slabs )</h2>
+<div class="outline-text-2" id="text-orgb230757">
+</div>
+<div id="outline-container-org216e69c" class="outline-3">
+<h3 id="org216e69c">Slabs and surface energy</h3>
+</div>
+
+<div id="outline-container-orgc0580df" class="outline-3">
+<h3 id="orgc0580df">Electronic structure of slabs vs Bulk</h3>
+</div>
+
+<div id="outline-container-orge9d7a7e" class="outline-3">
+<h3 id="orge9d7a7e">Work<sub>function</sub> Calculations</h3>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Yavar T. Azar</p>
+<p class="date">Created: 2019-05-03 Fri 23:05</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
