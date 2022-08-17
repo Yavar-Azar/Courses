@@ -137,6 +137,37 @@ f^{\prime} &amp; \approx \frac{f_{0}-f_{-1}}{h}+\mathcal{O}(h) .
 f^{\prime \prime} \approx \frac{f_{1}-2 f_{0}+f_{-1}}{h^{2}} .\end{split}\]</div>
 <section id="hands-on">
 <h3>Hands-On<a class="headerlink" href="#hands-on" title="Permalink to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+
+<span class="c1">##  we are looking for the derivative of the sin(x) from tw methods</span>
+
+<span class="n">steps</span><span class="o">=</span><span class="mi">1000</span>
+
+<span class="n">x</span> <span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="n">steps</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">ydac</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">h</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">y1dif</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="n">h</span>
+
+<span class="n">yrol2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="mi">2</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]</span>
+<span class="n">yt</span> <span class="o">=</span><span class="n">y</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+
+<span class="n">y2dif</span> <span class="o">=</span> <span class="p">(</span><span class="n">yt</span><span class="o">-</span><span class="n">yrol2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+
+<span class="c1">#plt.plot(x, ydac, &#39;--&#39;, label=&quot;answer&quot;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y1dif</span><span class="o">-</span><span class="n">ydac</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;forward&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y2dif</span><span class="o">-</span><span class="n">ydac</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;2points&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://colab.research.google.com/drive/1Okkk3iwABeOl0BATwgbmURTuSHSwyBqW?usp=sharing">Colab link</a></p>
 </section>
 </section>
 <section id="numerical-quadrature">

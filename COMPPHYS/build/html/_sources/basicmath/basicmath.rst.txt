@@ -94,6 +94,43 @@ extract thiese formula as a practice
 Hands-On
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+.. code-block:: python
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+
+
+
+    ##  we are looking for the derivative of the sin(x) from tw methods
+
+    steps=1000
+
+    x =np.linspace(-np.pi, np.pi,steps)
+    y =np.sin(x)
+
+    ydac = np.cos(x)
+
+    h = x[1]-x[0]
+
+    y1dif = np.diff(y)/h
+
+    yrol2=np.roll(y,2)[2:]
+    yt =y[2:]
+
+    y2dif = (yt-yrol2)/(2*h)
+
+    #plt.plot(x, ydac, '--', label="answer")
+    plt.plot(x[:-1], y1dif-ydac[1:], lw=2, label='forward')
+    plt.plot(x[1:-1], y2dif-ydac[1:-1], lw=3, label='2points')
+
+    plt.legend()
+
+
+
+
+
+
+`Colab link <https://colab.research.google.com/drive/1Okkk3iwABeOl0BATwgbmURTuSHSwyBqW?usp=sharing>`_
 
 
 
