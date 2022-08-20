@@ -100,9 +100,7 @@ The Perceptron algorithm learns the weights for the input signals in order to dr
 Basic concepts
 
 - activation function
-- 
-
-
+- weight
 
 <img src="./images/perceptron.jpg" alt="drawing" width="600"/>
 
