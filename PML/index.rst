@@ -7,13 +7,15 @@ Welcome to Machine_learning's documentation!
 ============================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    
    intro/intro
    percept/percept
    classification/classification
+   regression/regression
    datapre/datapre
    nn/nn
+
    
 
 

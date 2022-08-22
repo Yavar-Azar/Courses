@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'COMPPHYS1'
-copyright = '2022, Yavar_Azar'
-author = 'Yavar_Azar'
+project = 'Computational Physics'
+copyright = '2022, Yavar Azar'
+author = 'Yavar T. Azar'
 
 
 # -- General configuration ---------------------------------------------------

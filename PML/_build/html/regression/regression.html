@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Regression Analysis in ML &mdash; Machine Learning 01 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Data Preprocessing" href="../datapre/datapre.html" />
+    <link rel="prev" title="Classification" href="../classification/classification.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Machine Learning
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../percept/percept.html">Perceptron</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../classification/classification.html">Classification</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Regression Analysis in ML</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-terminology">Basic terminology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#types-of-regression">Types of regression</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#linear-regression">Linear regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#polynomial-regression">Polynomial Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#logistic-regression">Logistic Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#support-vector-regression">Support Vector Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#decision-tree-regression">Decision Tree Regression</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../datapre/datapre.html">Data Preprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nn/nn.html">Neural Network</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Machine Learning</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Regression Analysis in ML</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/regression/regression.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="regression-analysis-in-ml">
+<h1>Regression Analysis in ML<a class="headerlink" href="#regression-analysis-in-ml" title="Permalink to this heading"></a></h1>
+<p>Regression analysis is a statistical method to model the relationship between a dependent (target)
+and independent (predictor) variables with one or more independent variables. More specifically,
+Regression analysis helps us to understand how the value of the dependent variable is changing
+corresponding to an independent variable when other independent variables are held fixed.
+It predicts continuous/real values such as temperature, age, salary, price, etc.</p>
+<p>In Regression, we plot a graph between the variables which best fits the given datapoints, using this plot, the machine learning model can make predictions about the data. In simple words, “Regression shows a line or curve that passes through all the datapoints on target-predictor graph in such a way that the vertical distance between the datapoints and the regression line is minimum.” The distance between datapoints and line tells whether a model has captured a strong relationship or not.</p>
+<p>Some examples of regression can be as:</p>
+<ul class="simple">
+<li><p>Prediction of rain using temperature and other factors</p></li>
+<li><p>Determining Market trends</p></li>
+<li><p>Prediction of road accidents due to rash driving.</p></li>
+</ul>
+<section id="basic-terminology">
+<h2>Basic terminology<a class="headerlink" href="#basic-terminology" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p>Dependent Variable: The main factor in Regression analysis which we want to predict or understand is called the dependent variable. It is also called target variable.</p></li>
+<li><p>Independent Variable: The factors which affect the dependent variables or which are used to predict the values of the dependent variables are called independent variable, also called as a predictor.</p></li>
+<li><p>Outliers: Outlier is an observation which contains either very low value or very high value in comparison to other observed values. An outlier may hamper the result, so it should be avoided.</p></li>
+<li><p>Multicollinearity: If the independent variables are highly correlated with each other than other variables, then such condition is called Multicollinearity. It should not be present in the dataset, because it creates problem while ranking the most affecting variable.</p></li>
+<li><p>Underfitting and Overfitting: If our algorithm works well with the training dataset but not well with test dataset, then such problem is called Overfitting. And if our algorithm does not perform well even with training dataset, then such problem is called underfitting.</p></li>
+</ul>
+</section>
+<section id="types-of-regression">
+<h2>Types of regression<a class="headerlink" href="#types-of-regression" title="Permalink to this heading"></a></h2>
+<a class="reference internal image-reference" href="../_images/types-of-regression.png"><img alt="../_images/types-of-regression.png" class="align-right" src="../_images/types-of-regression.png" style="width: 350px;" /></a>
+<ul class="simple">
+<li><p>Linear Regression</p></li>
+<li><p>Logistic Regression</p></li>
+<li><p>Polynomial Regression</p></li>
+<li><p>Support Vector Regression</p></li>
+<li><p>Decision Tree Regression</p></li>
+<li><p>Random Forest Regression</p></li>
+<li><p>Ridge Regression</p></li>
+<li><p>Lasso Regression:</p></li>
+</ul>
+<p>Each method can be used for different scenario</p>
+<section id="linear-regression">
+<h3>Linear regression<a class="headerlink" href="#linear-regression" title="Permalink to this heading"></a></h3>
+<p>Linear regression shows the linear relationship between the independent variable (X-axis) and the dependent variable (Y-axis), hence called linear regression.</p>
+<a class="reference internal image-reference" href="../_images/linearreg.png"><img alt="../_images/linearreg.png" src="../_images/linearreg.png" style="width: 400px;" /></a>
+<p>a mathematical euqation for regression can bes shown</p>
+<div class="math notranslate nohighlight">
+\[Y= aX+b\]</div>
+<div class="line-block">
+<div class="line">Here, Y = dependent variables (target variables),</div>
+<div class="line">X= Independent variables (predictor variables),</div>
+<div class="line">a and b are the linear coefficients</div>
+</div>
+</section>
+<section id="polynomial-regression">
+<h3>Polynomial Regression<a class="headerlink" href="#polynomial-regression" title="Permalink to this heading"></a></h3>
+<p>Polynomial Regression is a type of regression which models the non-linear dataset using a linear model.
+It is similar to multiple linear regression, but it fits a non-linear curve between the value of x and corresponding conditional values of y.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In Polynomial regression, the original features are transformed into polynomial features of given degree and then modeled using a linear model. Which means the datapoints are best fitted using a polynomial line.</p>
+</div>
+<a class="reference internal image-reference" href="../_images/polynomial.png"><img alt="../_images/polynomial.png" src="../_images/polynomial.png" style="width: 400px;" /></a>
+</section>
+<section id="logistic-regression">
+<h3>Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permalink to this heading"></a></h3>
+<ul>
+<li><p>Logistic regression is another supervised learning algorithm which is used to solve the classification problems. In classification problems, we have dependent variables in a binary or discrete format such as 0 or 1.</p></li>
+<li><p>Logistic regression algorithm works with the categorical variable such as 0 or 1, Yes or No, True or False, Spam or not spam, etc.</p></li>
+<li><p>Logistic regression uses sigmoid function or logistic function which is a complex cost function. This sigmoid function is used to model the data in logistic regression. The function can be represented as</p>
+<div class="math notranslate nohighlight">
+\[f(x)=\frac{1}{1+e^{-x}}\]</div>
+</li>
+</ul>
+<p>where, f(x)= Output between the 0 and 1 value and x= input to the function</p>
+</section>
+<section id="support-vector-regression">
+<h3>Support Vector Regression<a class="headerlink" href="#support-vector-regression" title="Permalink to this heading"></a></h3>
+</section>
+<section id="decision-tree-regression">
+<h3>Decision Tree Regression<a class="headerlink" href="#decision-tree-regression" title="Permalink to this heading"></a></h3>
+<p>Decision Tree is a supervised learning algorithm which can be used for solving both classification and regression problems.</p>
+<a class="reference internal image-reference" href="../_images/decissiontree.png"><img alt="../_images/decissiontree.png" src="../_images/decissiontree.png" style="width: 400px;" /></a>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../classification/classification.html" class="btn btn-neutral float-left" title="Classification" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../datapre/datapre.html" class="btn btn-neutral float-right" title="Data Preprocessing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Yavar.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

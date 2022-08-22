@@ -1,0 +1,26 @@
+\selectlanguage *{english}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Types of ML}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Supervised Learning}{1}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Regression (continuous outcomes)}{2}{subsection.1.2.1}%
+\contentsline {section}{\numberline {1.3}Reinforcement learning}{3}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Unsupervised learning}{3}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Dimensionality reduction}{4}{section.1.5}%
+\contentsline {section}{\numberline {1.6}ML Roadmap}{4}{section.1.6}%
+\contentsline {chapter}{\numberline {2}Perceptron}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Basic cocepts}{5}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Perceptron Algorithm}{5}{subsection.2.1.1}%
+\contentsline {subsubsection}{Hands\sphinxhyphen {}on}{6}{subsubsection*.3}%
+\contentsline {section}{\numberline {2.2}Scikit\sphinxhyphen {}learn perceptron}{9}{section.2.2}%
+\contentsline {chapter}{\numberline {3}Classification}{13}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Regression Analysis in ML}{15}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Basic terminology}{15}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Types of regression}{16}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Linear regression}{16}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Polynomial Regression}{17}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Logistic Regression}{18}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Support Vector Regression}{19}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}Decision Tree Regression}{19}{subsection.4.2.5}%
+\contentsline {chapter}{\numberline {5}Data Preprocessing}{21}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Neural Network}{23}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Indices and tables}{25}{chapter.7}%
