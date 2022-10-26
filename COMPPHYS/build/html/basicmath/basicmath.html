@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basic Mathematic Operation &mdash; Computational Physics  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Errors" href="../Errors/Errors.html" />
+    <link rel="prev" title="Visualization" href="../Visualization/Visualization.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Computational Physics
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Python/Python.html">Python Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Numerical/Numerical.html">Numerical</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Visualization/Visualization.html">Visualization</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Basic Mathematic Operation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#discretization">Discretization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#differentiation">Differentiation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hands-on">Hands-On</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#numerical-quadrature">Numerical quadrature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#finding-roots">Finding roots</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Errors/Errors.html">Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Integration/Integration.html">Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Derivatives/Derivatives.html">Derivatives</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Matrices/Matrices.html">Matrices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DataFitting/DataFitting.html">Data Fitting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ODE/ODE.html">Ordinary differential equation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Projects/Projects.html">Projects</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Computational Physics</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Basic Mathematic Operation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/basicmath/basicmath.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="basic-mathematic-operation">
+<h1>Basic Mathematic Operation<a class="headerlink" href="#basic-mathematic-operation" title="Permalink to this headline"></a></h1>
+<section id="discretization">
+<h2>Discretization<a class="headerlink" href="#discretization" title="Permalink to this headline"></a></h2>
+<div class="math notranslate nohighlight">
+\[f_{n}=f\left(x_{n}\right) ; x_{n}=n h(n=0, \pm 1, \pm 2, \ldots),\]</div>
+<a class="reference internal image-reference" href="../_images/discr.jpg"><img alt="Alternative text" src="../_images/discr.jpg" style="width: 400px;" /></a>
+</section>
+<section id="differentiation">
+<h2>Differentiation<a class="headerlink" href="#differentiation" title="Permalink to this headline"></a></h2>
+<p>We begin by using a Taylor series to expand $f$ in the neighborhood of $x=0$ :</p>
+<div class="math notranslate nohighlight">
+\[f(x)=f_{0}+x f^{\prime}+\frac{x^{2}}{2 !} f^{\prime \prime}+\frac{x^{3}}{3 !} f^{\prime \prime \prime}+\ldots\]</div>
+<p>where all derivatives are evaluated at x=0. It is then simple to verify that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+&amp;f_{\pm 1} \equiv f(x=\pm h)=f_{0} \pm h f^{\prime}+\frac{h^{2}}{2} f^{\prime \prime} \pm \frac{h^{3}}{6} f^{\prime \prime \prime}+\mathcal{O}\left(h^{4}\right) \\
+&amp;f_{\pm 2} \equiv f(x=\pm 2 h)=f_{0} \pm 2 h f^{\prime}+2 h^{2} f^{\prime \prime} \pm \frac{4 h^{3}}{3} f^{\prime \prime \prime}+\mathcal{O}\left(h^{4}\right)
+\end{aligned}\end{split}\]</div>
+<dl class="simple">
+<dt>where <span class="math notranslate nohighlight">\(\mathcal{O}\left(h^{4}\right)\)</span> means terms of order <span class="math notranslate nohighlight">\(h^{4}\)</span> or higher.</dt><dd><dl class="simple">
+<dt>To estimate the size of such terms, we can assume that  and its derivatives are all of the same order of magnitude,</dt><dd><p>as is the case for many functions of physical relevance.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="math notranslate nohighlight">
+\[f^{\prime}=\frac{f_{1}-f_{-1}}{2 h}-\frac{h^{2}}{6} f^{\prime \prime \prime}+\mathcal{O}\left(h^{4}\right)\]</div>
+<hr class="docutils" />
+<div class="math notranslate nohighlight">
+\[f^{\prime} \approx \frac{f_{1}-f_{-1}}{2 h}\]</div>
+<hr class="docutils" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This “3-point” formula would be exact if  were a second-degree polynomial in the 3-point interval <em>[-h,h]</em>,
+because the third- and all higherorder derivatives would then vanish.</p>
+</div>
+<p>It is more accurate (by one order in  ) than the forward or backward difference formulas:</p>
+<blockquote>
+<div><div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+f^{\prime} &amp; \approx \frac{f_{1}-f_{0}}{h}+\mathcal{O}(h) ; \\
+f^{\prime} &amp; \approx \frac{f_{0}-f_{-1}}{h}+\mathcal{O}(h) .
+\end{aligned}\end{split}\]</div>
+</div></blockquote>
+<p>extract thiese formula as a practice</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}f^{\prime} \approx \frac{1}{12 h}\left[f_{-2}-8 f_{-1}+8 f_{1}-f_{2}\right]+\mathcal{O}\left(h^{4}\right) \\
+f^{\prime \prime} \approx \frac{f_{1}-2 f_{0}+f_{-1}}{h^{2}} .\end{split}\]</div>
+<section id="hands-on">
+<h3>Hands-On<a class="headerlink" href="#hands-on" title="Permalink to this headline"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+
+<span class="c1">##  we are looking for the derivative of the sin(x) from tw methods</span>
+
+<span class="n">steps</span><span class="o">=</span><span class="mi">1000</span>
+
+<span class="n">x</span> <span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="n">steps</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">ydac</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">h</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">y1dif</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="n">h</span>
+
+<span class="n">yrol2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="mi">2</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]</span>
+<span class="n">yt</span> <span class="o">=</span><span class="n">y</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
+
+<span class="n">y2dif</span> <span class="o">=</span> <span class="p">(</span><span class="n">yt</span><span class="o">-</span><span class="n">yrol2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">h</span><span class="p">)</span>
+
+<span class="c1">#plt.plot(x, ydac, &#39;--&#39;, label=&quot;answer&quot;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y1dif</span><span class="o">-</span><span class="n">ydac</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;forward&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">y2dif</span><span class="o">-</span><span class="n">ydac</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;2points&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><a class="reference external" href="https://colab.research.google.com/drive/1Okkk3iwABeOl0BATwgbmURTuSHSwyBqW?usp=sharing">Colab link</a></p>
+</section>
+</section>
+<section id="numerical-quadrature">
+<h2>Numerical quadrature<a class="headerlink" href="#numerical-quadrature" title="Permalink to this headline"></a></h2>
+</section>
+<section id="finding-roots">
+<h2>Finding roots<a class="headerlink" href="#finding-roots" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Visualization/Visualization.html" class="btn btn-neutral float-left" title="Visualization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Errors/Errors.html" class="btn btn-neutral float-right" title="Errors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Yavar Azar.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
