@@ -1,3 +1,6 @@
+.. default-role:: math
+
+
 Ordinary differential equation
 =====================================
 
@@ -30,8 +33,9 @@ We are interested in computing approximate values of the solution of above Equat
 
 
 
+The Euler Method¶
+--------------------------------
 
 
-
-Numerov Algorithm for Schrödinger ODE
-----------------------------------------------------
+Let  `\frac{dS(t)}{dt} = F(t,S(t))`
+and
