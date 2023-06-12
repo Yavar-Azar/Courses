@@ -84,9 +84,7 @@ Repeat steps 1 to 4 from Method 1...
   - Step 5: After defining `my_ase_obj`, `pseudodict`, and `input_data`, we can build a Quantum Espresso input file using the `write` function:
 
     ```python
-    write("new.pwi", my_ase_obj, pseudopotentials=pseudodict, input_data=input_data, kpts=(2, 
-
-2, 2))
+    write("new.pwi", my_ase_obj, pseudopotentials=pseudodict, input_data=input_data, kpts=(2, 2, 2))
     ```
 
   - Step 6: Execute the `pw` command in the Linux terminal.
