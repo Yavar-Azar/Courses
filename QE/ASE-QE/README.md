@@ -1,52 +1,28 @@
 
+# Quantum Espresso + ASE: Building and Running Your First QE Input (6 minutes)
 
-# QE+ASE 	(6 min)
+## Prerequisites for the Course:
 
+To follow along with this course, please ensure you have the following:
 
+- **ASE** (Atomic Simulation Environment) installed.
+- **Quantum Espresso** installed.
+- Basic knowledge of Python data types (such as lists and dictionaries).
+- Calculator setup: Find the path of the installed `pw.x` executable by using the command `which pw.x` and add the following line to the end of your `~/.bashrc` file:
 
-## Build your first QE input and run it in 5 minutes
+```bash
+export ASE_ESPRESSO_COMMAND="/path/to/pw.x -in PREFIX.pwi > PREFIX.pwo"
+```
 
+Step 0: Download the CIF file and required pseudo-potentials and copy them to your working directory.
 
+There are two different methods to submit your job:
 
-### Summary of Course Prerequisites:
+**Method 1:**
 
-- **ase** installed
+- Build your input and submit your job inside the ASE environment.
 
-- **quantum espresso** installed
-
-- basic knowledge on python data types (list, dictionary, ...)
-
-- Set up the calculator 
-
-  Find the path of installed `pw.x ` using ``which pw.x` and add  this line to the end of your `~/.bashrc` 
-
-  ```bash
-  export ASE_ESPRESSO_COMMAND="/path/to/pw.x -in PREFIX.pwi > PREFIX.pwo"
-  ```
-
-  
-
-
-
-Step-0 : Download your **cif** file and required **pseudo-potentials** and copy then in your work directory
-
-
-
-
-
-
-
-
-
-There are two different way to submit your job
-
-**First method:**
-
-- build your input and submit your job inside ase environment
-
-  - step 1
-
-    open ipython env and import ase libraries
+  - Step 1: Open an IPython environment and import ASE libraries.
 
     ```shell
     :~ $ ipython
@@ -57,101 +33,64 @@ There are two different way to submit your job
     from ase.calculators.espresso import Espresso
     ```
 
-    
-
-  - step 2
-
-    build ase Atoms object by reading cif file
+  - Step 2: Build an ASE Atoms object by reading the CIF file.
 
     ```python
-    myaseobj=read("GaAs.cif")
+    my_ase_obj = read("GaAs.cif")
     ```
 
-    
-
-  - step 3
-
-    define your input setting as a python dictionary
+  - Step 3: Define your input settings as a Python dictionary.
 
     ```python
-    inp_data={'prefix':"myprefix",'electron_maxstep':200,'outdir':"./",        'pseudo_dir':"./",'tstress':True,'tprnfor':True,'calculation':'scf', 
-     'ecutrho':240,'verbosity':'high','ecutwfc':30, 'diagonalization': 'david', 'occupations':'smearing','smearing':'mp', 'mixing_mode':'plain', 'mixing_beta':0.7,'degauss':0.001, 'nspin':1}
+    input_data = {'prefix': "myprefix", 'electron_maxstep': 200, 'outdir': "./", 'pseudo_dir': "./",
+                  'tstress': True, 'tprnfor': True, 'calculation': 'scf', 'ecutrho': 240, 'verbosity': 'high',
+                  'ecutwfc': 30, 'diagonalization': 'david', 'occupations': 'smearing', 'smearing': 'mp',
+                  'mixing_mode': 'plain', 'mixing_beta': 0.7, 'degauss': 0.001, 'nspin': 1}
     ```
 
-------------
+**Note:** You can modify the above input as desired...
 
-**Note**
-
-you can modify above input as you wish ...
-
----------------------------------------------------
-    
-
-  - step 4
-
-    define a dictionary in python containing your pseudo files, in our example
+  - Step 4: Define a dictionary in Python containing your pseudo files. In our example:
 
     ```python
-    pseudodict={"Ga":"Ga.pbe-dnl-rrkjus_psl.1.0.0.UPF", "As":"As.pbe-n-rrkjus_psl.1.0.0.UPF"}
+    pseudodict = {"Ga": "Ga.pbe-dnl-rrkjus_psl.1.0.0.UPF", "As": "As.pbe-n-rrkjus_psl.1.0.0.UPF"}
     ```
 
-    
-
-  - step 5
-
-    add espresso calculator to ase Atoms object as follows:
+  - Step 5: Add the Espresso calculator to the ASE Atoms object as follows:
 
     ```python
-    myaseobj.calc=Espresso(pseudopotentials=pseudodict,input_data=inp_data, kpts=(2,2,2))
+    my_ase_obj.calc = Espresso(pseudopotentials=pseudodict, input_data=input_data, kpts=(2, 2, 2))
     ```
 
-    
-
-  - step 6
-
-    submit quantum espresso job 
+  - Step 6: Submit the Quantum Espresso job.
 
     ```python
-    myaseobj.get_potential_energy()
+    my_ase_obj.get_potential_energy()
     ```
 
-    
-
-  - step 7
-
-    get output data
+  - Step 7: Get the output data.
 
     ```python
-    test=read("espresso.pwo")
-    test.get_potential_energy()
-    test.get_forces()
-    test.get_stress()
+    output = read("espresso.pwo")
+    output.get_potential_energy()
+    output.get_forces()
+    output.get_stress()
     ```
 
+**Method 2 (Alternative):**
 
+Repeat steps 1 to 4 from Method 1...
 
-- **Alternative method**
+  - Step 5: After defining `my_ase_obj`, `pseudodict`, and `input_data`, we can build a Quantum Espresso input file using the `write` function:
 
-Repeat step1 to step4 ...
+    ```python
+    write("new.pwi", my_ase_obj, pseudopotentials=pseudodict, input_data=input_data, kpts=(2, 
 
-  - step 5
+2, 2))
+    ```
 
-  after defining  **aseobj**, **psedudict** and **inputdata** we make can build a quantum espresso input file using `write`function:
-
-  ```python
-  write("new.pwi", myaseobj,pseudopotentials=pseudodict,input_data=inp_data, kpts=(2,2,2))
-  ```
-
-  - step 6
-
-    and execute pw command in the linux terminal
+  - Step 6: Execute the `pw` command in the Linux terminal.
 
     ```bash
-    ~ $    pw.x < new.pwi > new.pwo
+    ~ $ pw.x < new.pwi > new.pwo
     ```
-
-    
-
-  
-
-  
